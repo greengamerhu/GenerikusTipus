@@ -1,8 +1,13 @@
 package hu.petrik.generikustipus.Halmaz;
 
+import hu.petrik.generikustipus.verem.Verem;
+
 import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Vector;
 
 public class Main {
+    public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         /*
         try {
@@ -21,5 +26,25 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        Verem<Character> stack =  new Verem<>();
+        Verem<Character> stackReverse = new Verem<>();
+        String szo = sc.nextLine();
+        String tukorszo = "";
+        for (int i = 0; i < szo.length(); i++) {
+            stack.push(szo.charAt(i));
+        }
+        int i = 0;
+        while( i< szo.length()) {
+            System.out.println(szo.charAt(i));
+            i++;
+        }
+        System.out.println("------------------");
+        while(!stack.isEmpty()) {
+            System.out.println(stack.top());
+            stack.pop();
+        }
+        System.out.println(tukorszo);
+
+
     }
 }
